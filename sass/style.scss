@@ -1,0 +1,230 @@
+// Variables
+$primary-violet: hsl(257, 40%, 49%);
+$poppins: "Poppins", sans-serif;
+$openSans: "Open Sans", sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: url(/dist/images/bg-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: $primary-violet;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 81rem;
+  height: 100%;
+  margin: auto;
+  padding: 3rem 0;
+
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.left-side {
+  height: 100%;
+  width: 50vw;
+
+  .logo {
+    margin-bottom: 10.5vh;
+    img {
+      width: 14rem;
+    }
+  }
+
+  .illustration {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-left: 3rem;
+
+  width: 40vw;
+
+  .desc {
+    margin-top: 11rem;
+    color: white;
+
+    &__title {
+      font-family: $poppins;
+      font-size: 2.6rem;
+      font-weight: 600;
+      line-height: 1.4;
+
+      margin-top: 0.9rem;
+    }
+
+    &__text {
+      margin-top: 1.2rem;
+      font-family: $openSans;
+      font-size: 1.16rem;
+      font-weight: 400;
+    }
+
+    &__button {
+      border: none;
+      border-radius: 3rem;
+      padding: 0.9rem 4rem;
+      font-size: 1.1rem;
+      font-weight: 400;
+      font-family: $poppins;
+      color: $primary-violet;
+      box-shadow: 0px 5px 10px 0px #21212187;
+      cursor: pointer;
+      outline: none;
+
+      margin-top: 1.5rem;
+    }
+  }
+
+  .icons {
+    display: flex;
+    justify-content: flex-end;
+
+    & ul {
+      width: 10.5rem;
+      display: flex;
+      justify-content: space-evenly;
+
+      color: white;
+
+      list-style: none;
+
+      & li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border: 1.5px solid white;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  body {
+    background-size: cover;
+  }
+
+  .right-side {
+    .desc {
+      &__title {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  body {
+    background-image: url(/dist/images/bg-mobile.svg);
+    background-size: contain;
+    height: 100%;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .left-side {
+    width: 100%;
+    padding: 0 9%;
+
+    .illustration {
+      width: 70%;
+      margin: auto;
+    }
+  }
+
+  .right-side {
+    width: 100%;
+    padding: 0 9%;
+
+    .desc {
+      text-align: center;
+      margin-top: 2rem;
+      &__title {
+        font-size: 2rem;
+      }
+    }
+
+    .icons {
+      margin-top: 5rem;
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .left-side {
+    .illustration {
+      width: 100%;
+      margin: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    padding: 1.9rem 0;
+  }
+
+  .left-side {
+    .logo {
+      margin-bottom: 2.8rem;
+      img {
+        width: 10rem;
+      }
+    }
+
+    .illustration {
+      width: 100%;
+    }
+  }
+
+  .right-side {
+    .desc {
+      &__title {
+        font-size: 1.6rem;
+      }
+
+      &__text {
+        font-size: 16px;
+      }
+
+      &__button {
+        padding: 0.7rem 4.8rem;
+        font-size: 0.87rem;
+      }
+    }
+
+    .icons {
+      & ul {
+        & li {
+          width: 35px;
+          height: 35px;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
